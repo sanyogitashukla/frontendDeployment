@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Filters from "../components/Filter.jsx";
 import Stats from "../components/Stats.jsx";
-import TaskForm from "../components/TaskForm";
-import TaskList from "../components/TaskList";
+import TaskForm from "../components/TaskForm.jsx";
+import TaskList from "../components/TaskList.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 
 import {
