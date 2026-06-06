@@ -59,15 +59,21 @@ function TaskItem({
                             }
                         />
 
-                        <span
+                        <div
                             className={
                                 task.completed
-                                    ? "completed"
-                                    : ""
+                                    ? "completed task-details"
+                                    : "task-details"
                             }
                         >
-                            {task.title}
-                        </span>
+                            <h4>{task.title}</h4>
+
+                            <p>{task.description}</p>
+
+                            <small>
+                                Due: {task.dueDate}
+                            </small>
+                        </div>
 
                     </div>
 
@@ -84,9 +90,15 @@ function TaskItem({
 
                         <button
                             className="delete-btn"
-                            onClick={() =>
-                                onDelete(task.id)
-                            }
+                            onClick={() => {
+                                const confirmed = window.confirm(
+                                    "Are you sure you want to delete this task?"
+                                );
+
+                                if (confirmed) {
+                                    onDelete(task.id);
+                                }
+                            }}
                         >
                             Delete
                         </button>
